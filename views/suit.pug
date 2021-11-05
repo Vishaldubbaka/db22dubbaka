@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title 
+  - var results = [{suit: "Notch Lapel",price: 650,size:"Medium"},{suit: "Shawl Lapel",price: 700,size:" Large"},{suit: "Peak Lapel",price: 580,size:"Small"}];
+   div(class = "container-fluid")
+   div(class = "row")
+     each form,index in results
+        div(class="col-sm-4" onclick=`buy(${index})`) suit : #{form.suit} 
+        br
+        br 
+        div(class="col-sm-4" onclick=`buy(${index})`) price: #{form.price}
+        br
+        br  
+        div(class="col-sm-4" onclick=`buy(${index})`) size : #{form.size}
+        script.
+                function buy(itemNo){
+                    alert(`You purchased item ${itemNo+1}`)
+                }
