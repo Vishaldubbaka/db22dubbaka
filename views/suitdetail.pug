@@ -1,0 +1,22 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  - let suitid = toShow._id 
+  - let suit = toShow.suit 
+  - let suitprice = toShow.price 
+  - let suitsize = toShow.size 
+  div 
+    div.row 
+      div(class='suitAttr mr-3') suit ID is: 
+      div #{suitid} 
+    div.row 
+      div(class='suitAttr mr-3') suit is: 
+      div #{suit} 
+    div.row 
+      div(class='suitAttr mr-3') suit price is: 
+      div #{suitprice} 
+    div.row 
+      div(class='suitAttr mr-3') suit size is: 
+      div #{suitsize}

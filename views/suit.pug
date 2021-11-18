@@ -2,10 +2,12 @@ extends layout
 
 block content
   h1= title 
+  - let o;
  
   div(class = "container-fluid")
   div(class = "row")
      each form,index in results
+      div(class="card text bg-danger mb-3 text-white" class='row' class='card' class='card-body' class='card-text' onclick='buy('+index+')') #{o} 
         div(class="col-sm-4" onclick=`buy(${index})`) suit : #{form.suit} 
         br
         br 
