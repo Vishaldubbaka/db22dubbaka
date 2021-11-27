@@ -8,6 +8,9 @@ block content
   div(class = "row")
      each form,index in results
       - let destination = `dispatch(\"/suit/update?id=${form._id}\")`
+      - let destination1 = `dispatch(\"/suit/detail?id=${form._id}\")`
+      - let destination2 = `dispatch(\"/suit/delete?id=${form._id}\")`
+      a(class="btn btn-primary" href="/suit/create") Create
       div(class="card text bg-danger mb-3 text-white" class='row' class='card' class='card-body' class='card-text' onclick='buy('+index+')') #{o} 
         div(class="col-sm-4" onclick=`buy(${index})`) suit : #{form.suit} 
         br
@@ -17,6 +20,8 @@ block content
         br  
         div(class="col-sm-4" onclick=`buy(${index})`) size : #{form.size}
         button.btn( class="btn-primary ml-1", onclick= destination) Update
+        button.btn( class="btn-secondary ml-1", onclick= destination1) View
+        button.btn( class="btn-danger ml-1", onclick= destination2) Delete
         script.
                 function buy(itemNo){
                     alert(`You purchased item ${itemNo+1}`)

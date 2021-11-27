@@ -8,12 +8,13 @@ block content
         label.suitAttr(for='suit') suit type 
         input#suit(type='text', name='suit') 
     div.form-group 
-        label.suitAttr(for='size') price 
-        input#size(type='text', name='size') 
+        label.suitAttr(for='price') price 
+        input#price(type='text', name='price') 
     div.form-group 
-        label.suitAttr(for='cost') size 
-        input#cost(type='number', name='cost') 
-    input(type="submit") 
+        label.suitAttr(for='size') size 
+        input#size(type='text', name='size') 
+    input(type="submit" class="btn btn-primary") 
+    a(class="btn btn-secondary" href="/suit") Cancel
  
   script. 
     document.forms['suitForm'].addEventListener('submit', (event) => { 
