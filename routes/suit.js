@@ -19,13 +19,13 @@ const secured = (req, res, next) => {
 router.get('/detail', suit_controlers.suit_view_one_Page); 
 
 /* GET create suit page */ 
-router.get('/create', suit_controlers.suit_create_Page); 
+router.get('/create',secured, suit_controlers.suit_create_Page); 
 
 /* GET create update page */ 
 router.get('/update',secured, suit_controlers.suit_update_Page); 
 
 /* GET create suit page */ 
-router.get('/delete', suit_controlers.suit_delete_Page); 
+router.get('/delete', secured,suit_controlers.suit_delete_Page); 
 
 
 module.exports = router;
